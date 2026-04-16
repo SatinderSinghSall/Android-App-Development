@@ -26,7 +26,7 @@
 
 
         <EditText
-            android:text="@={contact.name}"
+            android:text="@{contact.name}"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:id="@+id/editText"
@@ -43,7 +43,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
-            android:text="@={contact.email}"
+            android:text="@{contact.email}"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:id="@+id/emailEDT"
