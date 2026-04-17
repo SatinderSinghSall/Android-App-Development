@@ -1,7 +1,10 @@
 package com.example.contactsmanagerapp;
 
+import android.app.Application;
 import android.os.Handler;
 import android.os.Looper;
+
+import androidx.lifecycle.LiveData;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -12,8 +15,9 @@ public class Repository {
     public ExecutorService executor;
     public Handler handler;
 
-    public Repository(ContactDAO contactDAO) {
-        this.contactDAO = contactDAO;
+    public Repository(Application application) {
+        ContactDatabase contactDatabase = ContactDatabase.getInstance(application);
+        this.contactDAO = contactDatabase.contactDAO();
 
         executor = Executors.newSingleThreadExecutor();
         handler = new Handler(Looper.getMainLooper());
@@ -37,14 +41,7 @@ public class Repository {
         });
     }
 
-    public void getAllContacts(Callback callback) {
-        executor.execute(() -> {
-            List<Contacts> list = contactDAO.getAllContacts();
-            handler.post(() -> callback.onResult(list));
-        });
-    }
-
-    public interface Callback {
-        void onResult(List<Contacts> contacts);
+    public LiveData<List<Contacts>> getAllContacts() {
+        return contactDAO.getAllContacts();
     }
 }

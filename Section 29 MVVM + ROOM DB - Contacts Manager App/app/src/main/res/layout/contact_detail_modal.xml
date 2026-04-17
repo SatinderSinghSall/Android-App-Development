@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Avatar -->
+
+    <TextView
+        android:id="@+id/modalAvatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="J"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/avatar_circle"
+        android:layout_gravity="center"/>
+
+    <!-- Name -->
+
+    <TextView
+        android:id="@+id/modalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Smith"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <!-- Email -->
+
+    <TextView
+        android:id="@+id/modalEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="john@email.com"
+        android:textSize="14sp"
+        android:textColor="#6B7280"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="center"/>
+
+    <!-- Divider -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#E5E7EB"/>
+
+    <!-- Buttons -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <!-- Edit -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Edit Contact"
+            android:enabled="false"
+            android:alpha="0.5"/>
+
+        <!-- Delete -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Delete Contact"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#EF4444"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</LinearLayout>
